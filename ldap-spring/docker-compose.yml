@@ -1,0 +1,42 @@
+version: '3.5'
+services:
+  ldap-account-manager:   
+    image: ldapaccountmanager/lam:latest
+    restart: always
+    ports:
+      - "8181:80"
+    volumes:
+      - lametc/:/etc/ldap-account-manager
+      - lamconfig/:/var/lib/ldap-account-manager/config
+      - lamsession/:/var/lib/ldap-account-manager/sess
+    environment:
+      - LAM_PASSWORD=${LAM_PASSWORD}
+      - LAM_LANG=en_US
+      - LDAP_SERVER=${LDAP_SERVER}
+      - LDAP_DOMAIN=${LDAP_DOMAIN}
+      - LDAP_BASE_DN=${LDAP_BASE_DN}
+      - ADMIN_USER=cn=admin,${LDAP_BASE_DN}
+      - DEBUG=true
+  ldap:
+    image: osixia/openldap:latest
+    restart: always
+    ports: 
+      - "389:389"
+    environment:
+      - LDAP_ORGANISATION=${LDAP_ORGANISATION}
+      - LDAP_DOMAIN=${LDAP_DOMAIN}
+      - LDAP_BASE_DN=${LDAP_BASE_DN}
+      - LDAP_ADMIN_PASSWORD=${LDAP_ADMIN_PASSWORD}
+      - LDAP_READONLY_USER=true
+      - LDAP_READONLY_USER_PASSWORD=${LDAP_READONLY_USER_PASSWORD}
+    command: "--loglevel info --copy-service"
+    volumes:
+      - ldap:/var/lib/ldap
+      - slapd:/etc/ldap/slapd.d
+
+volumes:
+  lametc:
+  lamconfig:
+  lamsession:
+  ldap:
+  slapd:

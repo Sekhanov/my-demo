@@ -1,0 +1,6 @@
+spring:
+    ldap:
+        urls: ldap://my-domain.com:389
+        base: dc=my-domain,dc=com
+        username: cn=admin,dc=my-domain,dc=com
+        password: admin

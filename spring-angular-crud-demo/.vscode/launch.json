@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "angular-rest-crud",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceFolder}/angular-rest-crud"
+        },
+        {
+            "type": "java",
+            "name": "spring-rest-crud",
+            "request": "launch",
+            "mainClass": "com.sekhanov.springrestcrud.RestCrudApp",
+            "projectName": "spring-rest-crud"
+        }
+    ]
+}
