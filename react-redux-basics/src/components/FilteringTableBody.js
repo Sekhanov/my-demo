@@ -9,10 +9,8 @@ export default class FilteringTableBody extends React.Component {
         return (
             <table>
                 <FilteringTableHeader
-                    data={this.props.data}
                 />
-                <FilteringTableRows
-                    data={this.props.data}
+                <FilteringTableRows                    
                     searchString={this.props.searchString}
                 />
             </table>

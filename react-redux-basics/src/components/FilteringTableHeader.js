@@ -1,19 +1,27 @@
 import React from 'react'
+import { connect } from 'react-redux';
+class FilteringTableHeader extends React.Component {
 
-
-export default class FilteringTableHeader extends React.Component {
-
-    render() {        
+    render() {
         const headersArr = Object.keys(this.props.data[0]).map(e => {
             return (
-                <th> {e} </th>
+                <th key={e}> {e} </th>
 
             )
         });
         return (
-            <tr>
-                {headersArr}
-            </tr>
+            <thead>
+                <tr>
+                    {headersArr}
+                </tr>
+            </thead>
+
         )
-    }
+    }    
 } 
+
+export default connect(
+    state => (
+        {data: state.data}
+    )
+)(FilteringTableHeader)

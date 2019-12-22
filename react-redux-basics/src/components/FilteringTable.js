@@ -1,7 +1,7 @@
-import React from 'react'
-import FilteringTableHeader from './SearchBar';
-import SearchBar from './SearchBar';
+import React from 'react';
 import FilteringTableBody from './FilteringTableBody';
+import SearchBar from './SearchBar';
+import { connect } from 'react-redux';
 
 export default class FilteringTable extends React.Component {
 
@@ -27,7 +27,6 @@ export default class FilteringTable extends React.Component {
                     updateSearchStringFn={this.updateSearchString}
                 />
                 <FilteringTableBody
-                    data={this.props.data}
                     searchString={this.state.searchString}
                 />
             </div>

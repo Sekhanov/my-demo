@@ -1,6 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
-export default class FilteringTableRows extends React.Component {
+class FilteringTableRows extends React.Component {
+
     render() {
         const searchString = this.props.searchString
         let data = [...this.props.data ];
@@ -11,15 +13,16 @@ export default class FilteringTableRows extends React.Component {
                 e.surname.toLowerCase().includes(searchString.toLowerCase())
             )
         }
+        
         rows = data.map(e => {
             const values = Object.values(e);
             const cells = values.map(v => {
                 return (
-                    <td> {v} </td>
+                    <td key={v}> {v} </td>
                 )
             })
             return (
-                <tr> {cells} </tr>
+                <tr key={data.indexOf(e)}> {cells} </tr>
             )
         })
         return (
@@ -30,3 +33,9 @@ export default class FilteringTableRows extends React.Component {
         )
     }
 }
+
+export default connect(
+    state => (
+        {data: state.data}
+    )
+)(FilteringTableRows)
