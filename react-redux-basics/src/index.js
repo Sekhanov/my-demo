@@ -5,10 +5,12 @@ import { combineReducers, createStore } from 'redux';
 import App from './App';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
+import { combinedReducers } from './redux/CombinedReducer';
+import searchStringReducer from './redux/SearchStringReducer';
 
 
 
-const store = createStore(combinedReducer)
+const store = createStore(searchStringReducer)
 
 
 // const store = createStore(data);
@@ -26,7 +28,7 @@ const store = createStore(combinedReducer)
 
 ReactDOM.render(<Provider store={store}>
     {/* <FilteringTable /> */}
-    <App></App>
+    <App/>
 </Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

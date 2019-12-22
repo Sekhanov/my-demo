@@ -4,7 +4,7 @@ import searchStringReducer from './SearchStringReducer';
 
 
 
-export default combineReducers(
+export  const combinedReducers = combineReducers(
     {
         processDataReducer: processDataReducer,
         searchStringReducer: searchStringReducer
