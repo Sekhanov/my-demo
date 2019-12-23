@@ -7,10 +7,11 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { combinedReducers } from './redux/CombinedReducer';
 import searchStringReducer from './redux/SearchStringReducer';
+import processDataReducer from './redux/ProcessDataReducer';
 
 
 
-const store = createStore(searchStringReducer)
+const store = createStore(processDataReducer)
 
 
 // const store = createStore(data);

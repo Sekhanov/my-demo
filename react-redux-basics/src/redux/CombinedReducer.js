@@ -6,8 +6,8 @@ import searchStringReducer from './SearchStringReducer';
 
 export  const combinedReducers = combineReducers(
     {
-        processDataReducer: processDataReducer,
-        searchStringReducer: searchStringReducer
+        data: processDataReducer,
+        searchString: searchStringReducer
         }
     
 )

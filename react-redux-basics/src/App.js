@@ -7,8 +7,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div> {this.props.searchString} </div>
-    <div>{this.props.data}</div>
+        {/* <div> {this.props.searchString} </div> */}
+    <div>{this.props.data.persons[0].name}</div>
       </div>
 
     )
@@ -18,7 +18,7 @@ class App extends React.Component {
 export default connect(
   state => (
     {
-      searchString: state.searchString,
+      // searchString: state.searchString,
       data: state.data
     }
   )
