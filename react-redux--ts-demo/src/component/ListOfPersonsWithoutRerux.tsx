@@ -1,9 +1,5 @@
 import React from 'react'
 import Person from '../data/Person'
-import IGlobalState from '../store/IGlobalState'
-import { connect } from 'react-redux'
-import { Persons } from '../mock/mockData';
-
 
 interface IProps {
     persons : Person[];
@@ -11,7 +7,7 @@ interface IProps {
 }
 
 
-export class ListOfPersons extends React.Component<IProps> {
+export default class ListOfPersonsWithoutRedux extends React.Component<IProps> {
     
 
     render() {
@@ -29,12 +25,3 @@ export class ListOfPersons extends React.Component<IProps> {
     }
 }
 
-
-const mapStateToProps = (state: IGlobalState) => ({
-    persons: state.persons
-})
-
-
-export default connect(
-    mapStateToProps
-)(ListOfPersons)

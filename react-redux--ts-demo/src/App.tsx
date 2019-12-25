@@ -7,7 +7,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       hello!
-      <ListOfPersons></ListOfPersons>
+      <ListOfPersons someString={'some string form react props'}></ListOfPersons>
     </div>
   );
 }
