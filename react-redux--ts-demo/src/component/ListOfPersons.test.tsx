@@ -7,9 +7,6 @@ import { Persons } from '../mock/mockData';
 import { ListOfPersons } from './ListOfPersons';
 
 
-const store = createStore(PersonReducer);
-
-
 it("list of persons snapshot without redux", () => {
     const tree = renderer.create(
         <ListOfPersonsWithoutRerux

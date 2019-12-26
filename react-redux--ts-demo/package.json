@@ -29,6 +29,11 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "jest": {
+    "setupFiles": [
+      "./src/TestSetup.js"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
