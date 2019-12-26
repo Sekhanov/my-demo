@@ -22,7 +22,7 @@ export class ListOfPersons extends React.Component<IProps> {
         return ( 
             <ul>
                 { personList }
-                <p>{this.props.someString}</p>
+                <p className="ss">{this.props.someString}</p>
             </ul>
             
         )

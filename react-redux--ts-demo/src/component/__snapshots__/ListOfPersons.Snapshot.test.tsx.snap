@@ -11,7 +11,9 @@ exports[`list of person snapshot apart from redux, import { ListOfPersons } 1`] 
   <li>
     KHanov
   </li>
-  <p>
+  <p
+    className="ss"
+  >
     some string from props
   </p>
 </ul>
