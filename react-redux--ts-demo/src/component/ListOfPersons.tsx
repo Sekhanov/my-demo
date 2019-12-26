@@ -2,7 +2,7 @@ import React from 'react'
 import Person from '../data/Person'
 import IGlobalState from '../store/IGlobalState'
 import { connect } from 'react-redux'
-import { Persons } from '../mock/mockData';
+import { persons } from '../mock/mockData';
 
 
 interface IProps {
@@ -16,13 +16,13 @@ export class ListOfPersons extends React.Component<IProps> {
 
     render() {
         const personList = this.props.persons.map(person => 
-            (<li key={person.age}>name: {person.name} surname: {person.surname}</li>)        
+            (<li key={person.age}>{person.surname}</li>)        
         )
 
         return ( 
             <ul>
                 { personList }
-                <p> {this.props.someString} </p>
+                <p>{this.props.someString}</p>
             </ul>
             
         )

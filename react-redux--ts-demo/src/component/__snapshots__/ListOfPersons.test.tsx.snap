@@ -3,27 +3,16 @@
 exports[`list of person snapshot apart from redux, import { ListOfPersons } 1`] = `
 <ul>
   <li>
-    name: 
-    ivan
-     surname: 
-    petronv
+    petrov
   </li>
   <li>
-    name: 
-    peter
-     surname: 
     ivanov
   </li>
   <li>
-    name: 
-    Sergey
-     surname: 
     KHanov
   </li>
   <p>
-     
     some string from props
-     
   </p>
 </ul>
 `;
@@ -34,7 +23,7 @@ exports[`list of persons snapshot without redux 1`] = `
     name: 
     ivan
      surname: 
-    petronv
+    petrov
   </li>
   <li>
     name: 
@@ -48,7 +37,9 @@ exports[`list of persons snapshot without redux 1`] = `
      surname: 
     KHanov
   </li>
-  <p>
+  <p
+    className="ss"
+  >
      
     some string from props
      

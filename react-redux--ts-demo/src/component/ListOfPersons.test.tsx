@@ -1,18 +1,19 @@
-import renderer from 'react-test-renderer'
-import ListOfPersonsWithoutRerux from './ListOfPersonsWithoutRerux'
 import React from 'react';
-import { createStore } from 'redux';
-import { PersonReducer } from '../Reducers/PersonReducer';
-import { Persons } from '../mock/mockData';
+import renderer from 'react-test-renderer';
+import { persons } from '../mock/mockData';
 import { ListOfPersons } from './ListOfPersons';
+import ListOfPersonsWithoutRedux from './ListOfPersonsWithoutRedux';
+
+
+
 
 
 it("list of persons snapshot without redux", () => {
     const tree = renderer.create(
-        <ListOfPersonsWithoutRerux
-            persons={Persons}
+        <ListOfPersonsWithoutRedux
+            persons={persons}
             someString={'some string from props'}
-        ></ListOfPersonsWithoutRerux>
+        ></ListOfPersonsWithoutRedux>
     )
     expect(tree).toMatchSnapshot();
 })
@@ -20,9 +21,14 @@ it("list of persons snapshot without redux", () => {
 it('list of person snapshot apart from redux, import { ListOfPersons }', () => {
     const tree = renderer.create(
         <ListOfPersons
-            persons={Persons}
+            persons={persons}
             someString={'some string from props'}
-        ></ListOfPersons>        
+        ></ListOfPersons>
     )
     expect(tree).toMatchSnapshot();
 })
+
+
+
+
+
