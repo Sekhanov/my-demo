@@ -1,1 +1,3 @@
 **/node_modules
+java-grpc/grpc.iml
+java-grpc/.idea/*
